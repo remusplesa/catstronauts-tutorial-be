@@ -5,6 +5,7 @@ type Query {
     "Query to get tracks array for the homepage grid"
     tracksForHome:[Track!]
     track(id: ID!): Track
+    module(id: ID!): Module!
 }
 
 type Mutation {
@@ -35,6 +36,8 @@ type Module {
     id: ID!
     title: String!
     length: Int
+    videoUrl: String
+    content: String
 }
 
 "Author of a complete track"

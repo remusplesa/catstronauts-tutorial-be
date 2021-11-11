@@ -7,6 +7,9 @@ const resolvers = {
     // get single track by id
     track: (_, {id}, { dataSources }) => {
         return dataSources.trackAPI.getTrack(id);
+    },
+    module: (_, {id}, {dataSources}) => {
+      return dataSources.trackAPI.getModule(id);
     }
   },
   Mutation: {
