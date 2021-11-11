@@ -1,7 +1,7 @@
-import { ApolloServer } from 'apollo-server';
-import typeDefs from './schema';
-import resolvers from './resolvers';
-import TrackAPI from './datasources/track-api';
+import { ApolloServer } from "apollo-server";
+import typeDefs from "./schema";
+import resolvers from "./resolvers";
+import TrackAPI from "./datasources/track-api";
 
 const server = new ApolloServer({
   typeDefs,
@@ -9,16 +9,19 @@ const server = new ApolloServer({
   dataSources: () => {
     return {
       trackAPI: new TrackAPI(),
-    }
-  }
+    };
+  },
 });
-
-const { url, port } = await server.listen({
-  port: process.env.PORT || 4000
-})
+const run = async () => {
+  const { url, port } = await server.listen({
+    port: process.env.PORT || 4000,
+  });
 
   console.log(`
-  🚀  Server is running!
-  🔉  Listening on port ${port}
-  📬  Query at ${url}
-  `)
+    🚀  Server is running!
+    🔉  Listening on port ${port}
+    📬  Query at ${url}
+    `);
+};
+
+run();

@@ -10,6 +10,7 @@
   "dependencies": {
     "apollo-datasource-rest": "^3.4.0",
     "apollo-server": "^3.5.0",
+    "babel": "^6.23.0",
     "graphql": "^15.7.2"
   },
   "devDependencies": {
